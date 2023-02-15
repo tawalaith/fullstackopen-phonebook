@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:ui": "rm -rf build && cd ../frontend && npm run build && cp -r build ../backend",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push fullstackopen-phonebook",
     "dev": "nodemon index.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
