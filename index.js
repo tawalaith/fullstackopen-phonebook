@@ -6,15 +6,21 @@ const app = express()
 
 //order of middlewares matters
 app.use(express.json())
-app.use(cors())
 app.use(express.static('build'))
+app.use(cors())
 morgan.token('body', (req) => JSON.stringify(req.body))
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms - :body'))
 
 //-----------------------
 
 
-let people = []
+let people = [
+  {
+    id: 1,
+    name: "Arto Hellas",
+    number: "040-123456",
+  },
+]
 
 app.get('/api/persons', (req, res) => {
   res.json(people) //convert from js object to json object
